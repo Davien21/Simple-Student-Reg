@@ -19,6 +19,8 @@ function uploadPic() {
 	fileValue = filePath
 	displayPic.src = filePath;
 	picLabel.style.display = "none"
+	console.log(displayPic.src)
+	console.log(fileValue)
 
 }
 
