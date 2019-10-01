@@ -5,23 +5,16 @@ console.log(year)
 
 let displayPic = document.querySelector(".displayPic")
 let fileInput = document.querySelector("input[type='file']")
-let fileValue = fileInput.value;
+console.log(fileInput)
 
+// let picLabel = document.querySelector('label[for="picInput"] span')
+function uploadPic () {
+	let file = fileInput.files[0];
+	let fileData = new FileReader();
 
-
-// console.log(displayPic.src)
-
-let picLabel = document.querySelector('label[for="picInput"] span')
-function uploadPic() {
-	fileValue = fileInput.value;
-	let slicedPath = fileValue.substr(fileValue.lastIndexOf("\\")+1,fileValue.length)
-	let filePath = "./"+slicedPath;
-	fileValue = filePath
-	displayPic.src = filePath;
-	picLabel.style.display = "none"
-	console.log(fileValue)
-	console.log(displayPic.src)
-}
-// console.log(displayPic.getAttribute('src'))
-// let fileInput = document.querySelector("input[type ='file']").value
-// console.log(picture)
+	fileData.readAsDataURL(file)
+	fileData.onload = function displayPic () {
+		let fileURL = fileData.result;
+		displayPic.src = fileURL
+	};
+};
