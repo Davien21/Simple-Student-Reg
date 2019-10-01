@@ -8,8 +8,8 @@ let fileInput = document.querySelector("input[type='file']")
 let fileValue = fileInput.value;
 
 
-console.log(displayPic.src)
-console.log(fileValue)
+// console.log(displayPic.src)
+// console.log(fileValue)
 
 let picLabel = document.querySelector('label[for="picInput"] span')
 function uploadPic() {
