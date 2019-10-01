@@ -7,14 +7,16 @@ let displayPic = document.querySelector(".displayPic")
 let fileInput = document.querySelector("input[type='file']")
 console.log(fileInput)
 
-// let picLabel = document.querySelector('label[for="picInput"] span')
-function uploadPic () {
-	let file = fileInput.files[0];
-	let fileData = new FileReader();
 
+function uploadPic() {
+	let file = fileInput.files[0];
+	console.log(file)
+	let fileData = new FileReader();
+	console.log(fileData)
 	fileData.readAsDataURL(file)
 	fileData.onload = function displayPic () {
 		let fileURL = fileData.result;
 		displayPic.src = fileURL
+		console.log(displayPic.src)
 	};
 };
